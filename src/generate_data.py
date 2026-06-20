@@ -21,6 +21,7 @@ cities = [
     "Madaba"
 ]
 
+#Create products
 products_data = [
     ("P001", "Laptop", "Electronics", 800),
     ("P002", "Mouse", "Electronics", 20),
@@ -65,6 +66,53 @@ for i in range(1, 1001):
 
     customers.append(customer)
 
+#Adding messy data to customers table
+customers.append({
+    "customer_id": "C9999",
+    "name": None,
+    "city": "Amman",
+    "signup_date": datetime(2024, 1, 1)
+})
+customers.append({
+    "customer_id": None,
+    "name": "No ID Customer",
+    "city": "Amman",
+    "signup_date": datetime(2024, 2, 1)
+})
+
+customers.append({
+    "customer_id": "C1001",
+    "name": "",
+    "city": "Irbid",
+    "signup_date": datetime(2024, 3, 1)
+})
+
+customers.append({
+    "customer_id": "C1002",
+    "name": "Bad Date Customer",
+    "city": "Zarqa",
+    "signup_date": "not-a-date"
+})
+
+customers.append({
+    "customer_id": "C001",
+    "name": "Duplicate Customer",
+    "city": "Aqaba",
+    "signup_date": datetime(2024, 4, 1)
+})
+
+#Add messy data to products
+products_data.append(
+    ("P021", "Broken Product", "Electronics", -100)
+)
+
+products_data.append(
+    ("P022", "", "Furniture", 50)
+)
+
+products_data.append(
+    ("P001", "Duplicate Laptop", "Electronics", 900)
+)
 
 # Create DataFrames
 customers_df = pd.DataFrame(customers)
@@ -94,6 +142,41 @@ for i in range (1, 10001):
         "sale_date": sale_date
     }
     sales.append(sale)
+
+    
+#Add messy data to sales
+sales.append({
+    "sale_id": "S99999",
+    "customer_id": "C99999",
+    "product_id": "P001",
+    "quantity": 2,
+    "sale_date": datetime(2025, 1, 1)
+})
+
+sales.append({
+    "sale_id": "S99998",
+    "customer_id": "C001",
+    "product_id": "P99999",
+    "quantity": 2,
+    "sale_date": datetime(2025, 1, 1)
+})
+
+sales.append({
+    "sale_id": "S99997",
+    "customer_id": "C001",
+    "product_id": "P001",
+    "quantity": -5,
+    "sale_date": datetime(2025, 1, 1)
+})
+
+sales.append({
+    "sale_id": "S00001",
+    "customer_id": "C001",
+    "product_id": "P001",
+    "quantity": 1,
+    "sale_date": datetime(2025, 1, 1)
+})
+
 
 # Create  Sales DataFrame
 sales_df = pd.DataFrame(sales)
