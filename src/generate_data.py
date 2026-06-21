@@ -185,6 +185,4 @@ sales_df = pd.DataFrame(sales)
 customers_df.to_csv(RAW_DATA_PATH / "customers.csv", index=False)
 products_df.to_csv(RAW_DATA_PATH / "products.csv", index=False)
 sales_df.to_csv(RAW_DATA_PATH / "sales.csv", index=False)
-print(customers_df.shape)
-print(products_df.shape)
-print(sales_df.shape)
+
